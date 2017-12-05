@@ -37,6 +37,7 @@ function ajax_pages_admin() {
 function ajax_pages_main() {
 	global $data_index;
   if (isset($_GET['get_in_json']) or isset($_POST['get_in_json'])) {
+    header('Content-Type: application/json');
     echo json_encode($data_index, JSON_PRETTY_PRINT);
     die();
   }
